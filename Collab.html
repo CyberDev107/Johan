@@ -3,11 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Johan</title>
+    <title>School Room Booking App</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <h1>School Room Booking System</h1>
+    </header>
+    
+    <div class="container">
+        <!-- Image map for room selection -->
+        <div id="school-map">
+            <div class="room-boundary" id="room-a-boundary"></div>
+            <div class="room-boundary" id="room-b-boundary"></div>
+            <div class="room-boundary" id="room-c-boundary"></div>
+            <img src="school.png" alt="School" usemap="#schoolMap">
+            <map name="schoolMap">
+                <area shape="rect" coords="100,150,200,250" href="#" alt="Room A" data-room="A">
+                <area shape="rect" coords="250,150,350,250" href="#" alt="Room B" data-room="B">
+                <area shape="rect" coords="400,150,500,250" href="#" alt="Room C" data-room="C">
+            </map>
+        </div>
+        
+        <!-- Room info section -->
+        <div id="room-info">
+            <h2>Room Information</h2>
+            <p id="room-name">Select a room to see details.</p>
+        </div>
+        
+        <!-- Booking form -->
+        <div id="booking-form">
+            <h2>Book a Room</h2>
+            <form id="book-room">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required><br>
+                
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required><br>
+                
+                <label for="date">Booking Date:</label>
+                <input type="date" id="date" name="date" required><br>
+                
+                <label for="time">Booking Time:</label>
+                <input type="time" id="time" name="time" required><br>
+                
+                <button type="submit">Book Now</button>
+            </form>
+            <div id="confirmation"></div>
+        </div>
+    </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
-
-<!DOCTYPE html>
