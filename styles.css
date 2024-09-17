@@ -1,3 +1,4 @@
+/* General styling */
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -25,45 +26,46 @@ header {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    position: relative;
 }
 
 #school-map {
     position: relative;
-    width: 500px;
 }
 
 #school-map img {
-    width: 100%;
+    width: 500px;
+    height: auto;
     border: 2px solid #007BFF;
     border-radius: 8px;
 }
 
-.room-boundary {
+.room-outline {
     position: absolute;
     border: 2px dotted red;
-    pointer-events: none; /* Prevent the div from interfering with clicks */
+    pointer-events: auto; /* Change this to auto so that divs can be clicked */
+    cursor: pointer; /* Optionally add a cursor style to indicate interactivity */
 }
 
-#room-a-boundary {
-    top: 150px;
-    left: 100px;
-    width: 100px;
-    height: 100px;
+/* Specific positions of the rooms */
+#room-a {
+    top: 234px;
+    left: 353px;
+    width: 70px;
+    height: 40px;
 }
 
-#room-b-boundary {
-    top: 150px;
-    left: 250px;
-    width: 100px;
-    height: 100px;
+#room-b {
+    top: 134px;
+    left: 153px;
+    width: 70px;
+    height: 40px;
 }
 
-#room-c-boundary {
-    top: 150px;
-    left: 400px;
-    width: 100px;
-    height: 100px;
+#room-c {
+    top: 334px;
+    left: 253px;
+    width: 70px;
+    height: 40px;
 }
 
 #room-info, #booking-form {

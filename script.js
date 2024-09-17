@@ -1,8 +1,26 @@
 $(document).ready(function() {
-    // Handle room selection on image map
-    $('area').click(function(event) {
+    let isDebugMode = false;
+
+    // Toggle debug mode on checkbox change
+    $('#mode-toggle').change(function() {
+        isDebugMode = $(this).is(':checked');
+    });
+
+    // Handle room selection or coordinate display based on mode
+    $('.room-outline').on('click', function(event) {
         event.preventDefault();
-        const room = $(this).data('room');
+        const room = $(this).attr('id').replace('room-', '').toUpperCase();
+
+        if (isDebugMode) {
+            // In debug mode, show coordinates (top, left, width, height)
+            const position = $(this).position();
+            const width = $(this).width();
+            const height = $(this).height();
+            $('#room-name').text(`Coordinates: Top = ${position.top}, Left = ${position.left}, Width = ${width}, Height = ${height}`);
+            return;
+        }
+
+        // Normal mode: Handle room selection
         $('#room-name').text('You selected Room ' + room);
         $('#book-room').attr('data-room', room);
     });
@@ -27,5 +45,16 @@ $(document).ready(function() {
 
         // Reset form after submission
         $('#book-room')[0].reset();
+    });
+
+    // Handle image clicks in debug mode to show x, y coordinates
+    $('#school-image').on('click', function(event) {
+        if (isDebugMode) {
+            const imgOffset = $(this).offset();
+            const clickX = event.pageX - imgOffset.left;
+            const clickY = event.pageY - imgOffset.top;
+
+            $('#room-name').text(`Clicked at: X = ${clickX}, Y = ${clickY}`);
+        }
     });
 });
