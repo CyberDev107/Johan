@@ -6,27 +6,67 @@
     <title>School Room Booking App</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header>
-        <h1>School Room Booking System</h1>
-    </header>
-    
+
+  
     <div class="container">
         <!-- Checkbox for mode toggle -->
+
+        <!--
         <div>
             <label for="mode-toggle">
                 <input type="checkbox" id="mode-toggle"> Debug Mode
             </label>
         </div>
-        
-        <!-- Image map for room selection -->
-        <div id="school-map" class="map-container">
-            <img src="school.png" alt="School" id="school-image">
-            <!-- Divs to represent room outlines -->
-            <div class="room-outline" id="room-a"></div>
-            <div class="room-outline" id="room-b"></div>
-            <div class="room-outline" id="room-c"></div>
+        -->
+
+        <div id="button">
+            <button id="Floor-1">1</button>
+            <button id="Floor-2">2</button>
+            <button id="Floor-3">3</button>
+            <button id="Floor-4">4</button>
         </div>
+        
+        <div id="school-map" class="map-container">
+            <div id="floor-map-container">
+                 <!-- Image map for room selection -->
+            
+                    
+                <div class="floor-map" id="Floor-1-map">
+                    <h2>Floor 1</h2>
+                    <img src="Floor_1.png" alt="School" >
+                    
+                </div>
+            
+                
+                <div class="floor-map" id="Floor-2-map">
+                    <h2>Floor 2</h2>
+                    <img src="Floor_2.png" alt="School">
+                    
+                    
+                </div>
+                
+
+                <div class="floor-map" id="Floor-3-map">
+                    <h2>Floor 3</h2>
+                    <img src="Floor_3.png" alt="School">
+                    <!-- Divs to represent room outlines -->
+                    <div class="room-outline" id="room-a"></div>
+                    <div class="room-outline" id="room-b"></div>
+                    <div class="room-outline" id="room-c"></div>
+                </div>
+
+                
+                <div class="floor-map" id="Floor-4-map">
+                    <h2>Floor 4</h2>
+                    <img src="Floor_4.png" alt="School">
+            
+                </div>
+                
+            </div>
+        </div>
+       
         
         <div id="room-info">
             <h2>Room Information</h2>

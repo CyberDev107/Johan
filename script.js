@@ -57,4 +57,21 @@ $(document).ready(function() {
             $('#room-name').text(`Clicked at: X = ${clickX}, Y = ${clickY}`);
         }
     });
+
+
+    const buttons = document.querySelectorAll('#button button');
+    const floorMaps = document.querySelectorAll('.floor-map');
+
+    buttons.forEach((button) => {
+        button.addEventListener('click', (e) => {
+            const selectedFloorMapId = `${e.target.id}-map`;
+            floorMaps.forEach((map) => {
+                if (map.id === selectedFloorMapId) {
+                    map.style.display = 'block';
+                } else {
+                    map.style.display = 'none';
+                }
+            });
+        });
+    });
 });
