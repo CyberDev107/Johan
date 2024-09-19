@@ -59,7 +59,7 @@ $(document).ready(function() {
     });
 
 
-    const buttons = document.querySelectorAll('#button button');
+    const buttons = document.querySelectorAll('.button button');
     const floorMaps = document.querySelectorAll('.floor-map');
 
     buttons.forEach((button) => {
