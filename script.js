@@ -60,8 +60,27 @@ $(document).ready(function() {
         $('#book-room')[0].reset();
     });
 
+    // Sending form info to Nodemailer
+    $(document).ready(function() {
+        $('#book-room').submit(function(event) {
+            event.preventDefault();
+            const formData = $(this).serialize();
+            $.ajax({
+                type: 'POST',
+                url: 'email-send.js',
+                data: formData,
+                success: function(response) {
+                    console.log(response)
+                },
+                error: function(xhr, status, error) {
+                    console.log(error)
+                }
+            });
+        });;
+    })
+
     // Handle image clicks in debug mode to show x, y coordinates
-    $('#Floor-3-map').on('click', function(event) {
+    $('#school-image').on('click', function(event) {
         if (isDebugMode) {
             const imgOffset = $(this).offset();
             const clickX = event.pageX - imgOffset.left;
