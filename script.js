@@ -61,7 +61,7 @@ $(document).ready(function() {
     });
 
     // Handle image clicks in debug mode to show x, y coordinates
-    $('#school-image').on('click', function(event) {
+    $('#Floor-3-map').on('click', function(event) {
         if (isDebugMode) {
             const imgOffset = $(this).offset();
             const clickX = event.pageX - imgOffset.left;
