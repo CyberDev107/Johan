@@ -9,7 +9,20 @@ $(document).ready(function() {
     // Handle room selection or coordinate display based on mode
     $('.room-outline').on('click', function(event) {
         event.preventDefault();
-        const room = $(this).attr('id').replace('room-', '').toUpperCase();
+
+        // Replace room with GIHS room naming
+        let room = $(this).attr('id')
+        switch(room) {
+            case 'room-a':
+                room = '2FT09'
+                break;
+            case 'room-b':
+                room = '2FT01'
+                break;
+            default:
+                room = 'sigma'
+
+        }
 
         if (isDebugMode) {
             // In debug mode, show coordinates (top, left, width, height)
