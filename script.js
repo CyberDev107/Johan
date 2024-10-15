@@ -15,7 +15,7 @@ $(document).ready(function() {
                 room = '2FT09';
                 break;
             case 'room-b':
-                room = '3LA07'; // Ensure you are using the correct room names
+                room = '3LA07';
                 break;
             default:
                 room = 'sigma';
@@ -48,19 +48,21 @@ $(document).ready(function() {
                 <p>You have booked Room ${room} on ${date} at ${time}.</p>
             `);
 
-            // Send form info to Nodemailer
+            // Send form info to the server
             const formData = $(this).serialize();
             $.ajax({
                 type: 'POST',
-                url: 'email-send.js', // Ensure your server is configured to handle this
-                data: formData,
+                url: 'http://localhost:3000/send-email',
+                data: formData + '&room=' + room,
                 success: function(response) {
                     console.log(response);
                 },
                 error: function(xhr, status, error) {
-                    console.error(error);
+                    console.error("Error:", error);
+                    console.log("Response:", xhr.responseText); // Log the response for more details
                 }
             });
+            
         } else {
             $('#confirmation').html(`<p>Please select a room before booking.</p>`);
         }
